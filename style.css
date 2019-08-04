@@ -1,3 +1,4 @@
+/* some constants */
 :root {
   --margin: 8px;
   --margin-2: calc(var(--margin) * 2);
@@ -11,7 +12,15 @@
   --fi-c: calc(var(--fi-a) - var(--fi-b));
 }
 
-img#prof {
+/* the glider */
+div#prof {
+  background: #ccc url(./img/glider.svg) 0 calc(25vmin - 5vw + 10px + var(--margin)) repeat-x fixed;
+  background-size: 10vw;
+  padding: var(--margin);
+}
+
+/* the circle with prof img */
+#prof > img {
   width: 50vmin;
   height: 50vmin;
   display: block;
@@ -21,12 +30,7 @@ img#prof {
   border: black 10px solid;
 }
 
-div#prof {
-  background: #ccc url(./img/glider.svg) 0 calc(25vmin - 5vw + 10px + var(--margin)) repeat-x fixed;
-  background-size: 10vw;
-  padding: var(--margin);
-}
-
+/* hide scrollbar */
 html {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -35,6 +39,8 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+
+/* Blinker font */
 body {
   margin: 0;
   font-family: 'Blinker', sans-serif;
@@ -67,7 +73,8 @@ div#desc {
   width: 100%;
   background-color: #567;
 }
-p#desc {
+
+#desc > p {
   font-size: 2.5vw;
   padding-bottom: 1em;
   width: var(--fi-a);

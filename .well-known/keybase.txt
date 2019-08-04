@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/nircek
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nircek.github.io
+  * I am nircek (https://keybase.io/nircek) on keybase.
+  * I have a public key with fingerprint 93F9 9DE4 C1D2 7DB2 64ED  91BD 38A9 2C1A 795C 48A2
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010135ee89452d2638a04e06ce6b795f417da8581be2b69f5578dc938e5c8f617a1e0a",
+      "fingerprint": "93f99de4c1d27db264ed91bd38a92c1a795c48a2",
+      "host": "keybase.io",
+      "key_id": "38a92c1a795c48a2",
+      "kid": "010135ee89452d2638a04e06ce6b795f417da8581be2b69f5578dc938e5c8f617a1e0a",
+      "uid": "4f7c8986e8416ca1d0f70dd190d11e19",
+      "username": "nircek"
+    },
+    "service": {
+      "hostname": "nircek.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1564904770,
+  "expire_in": 157680000,
+  "prev": "595d82ab20d0791edd3d79822e0cbc1e4d0e56d52b69bdf588d88ddfdfec50a8",
+  "seqno": 34,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtkm1QVFUYxxcER1BAEpuQwLxOMc0seO/d+3Lu0ohFJTHSrqMzGsFs995z7nJl
+3V12LyABKU5NUhkrmgVGBA0BZSKg2DC8lDFASbyIDDJZEauRU1C8iZJF91J+aKaP
+nTkzZ87z/P+/8zzPHE/QCt0qH1Cn35Cbmljlc+mmoEt7+qgpDxMcMBcz5mEZaPlA
+NojciiVDhpgRwwmcMNAIAY6iSUgyBsDjFMIZETECy9ESRbCQBzQgBEQKDCfRNAug
+yBkAokUgMQTLEwjnMT0myXYrcjldsl1RsZxB4jiIKJGAJAsFkqEQ5AgBqniOFAle
+RYsU4EnVmO5waw61OIF3o1jZocbUi2W5vP/Q/891Zy3jKIkVAQcYBCiCEXkC4hKL
+Q0hwOCQIRHCa0I1cdn4/UtV22SWiDKxAj6mxbFlE2li1Pv6Vj7XKSnqW8HdHTpdD
+cYgOm5pNVxSn26i5lVynJs9BguUfkEWQ7VCdpOrIRi637LBjRkJVioqskQmaoTic
+Yllcj6EDTtmFLLKmoFkG4OrS3kHZKpLmaAieJ3mBxCHOcgSC0ABZDpAkwkVBJBAF
+cUQzkNaGI0CJBgCqG0pQQiKN8wDTesu0OzCjgVIL5a0q1C1b7byS5UJYQWCRr8FP
+57NKF3n/Jr/jd8qvf365oBFOHmu79/38fbW/pwsMWHsvcrJsre5Igy1q9YtF6+8j
+6sfiRkaTa/o7xvXR5/bdeSWhvbsYC1mYTjY3AXPD+dYuE3a7u3/bWLM8aeqMrLaa
+Gp0RV6sGSobcoWVxl+KpiqilNVLtbMmVsa8FkPqwoeO11zc608kzk97o7l298Trv
+yOldbzxVO1Pwjdm+/mYP1ZxebFxw7YlJK92eEzjYmjC88o/f8/iUW9ID9eXjRz5N
+Orv3S+zERWw64ovB8h0NLfXryp4I+k2sCbbVn4sC3RMdw4EDjReOx4b4JSjvB02G
+3rAEVL7nAYfjmhPX7GYmLu9XwsJT2/lvzeu8KYtxpXM/SKdq+nJvRdX8EnFg9yZb
+5TOe8vyW0vHzAY0tE77tw3D2pQfbTA2Dz526S3oyQ6ZNpoOC57GXfw2zn/xgLjo8
+4OfONg8cx6pCg0aCu/M+i7nWm08W+ja+7Yy57WMd8m67MlRYGrnobdrS8rjVkb+i
+aIY3m75rnQ+uenKqMK3/UC13cM98GXF3Nim/Z8fWlNXiuyE7/TPifvSvCt2rf2Tx
+1dEgY/ijmWMnSi6eJmOYh8K236i72n546fuczmc/zEJHa+bfmSlOFPhs/2t9U1tt
+oKHwWPSbXY6fNofvq9jonVqqvh5/aMHnI+vKguSuCxUhlfqA3pyU0B7zmY+bN29I
++oT7atyYszMFm6wTXljsmxt4a+WfAl5avaXp7Ohf
+=MVVW
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nircek
+
+==================================================================
+
