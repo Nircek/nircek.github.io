@@ -1,8 +1,6 @@
 /* some constants */
 :root {
-  --margin: 8px;
-  --margin-2: calc(var(--margin) * 2);
-  --margin-4: calc(var(--margin) * 2);
+  /* math magic useless stuff */
   --sqrt-2: 1.4142135623730951;
   --sqrt-3: 1.7320508075688772;
   --sqrt-5: 2.23606797749979;
@@ -10,24 +8,43 @@
   --fi-a: calc(1 / var(--fi) * 100%);
   --fi-b: calc(100% - var(--fi-a));
   --fi-c: calc(var(--fi-a) - var(--fi-b));
+
+  /* actual sizes */
+  --margin: 8px;
+  --margin-2: calc(var(--margin) * 2);
+  --margin-4: calc(var(--margin) * 2);
+
+  --width: 100vw;
+  --circle-radius: 50vmin;
+  --circle-border-size: 10px;
+
+  --glider-number: 12;
+  --glider-size: calc(var(--width) / var(--glider-number));
+  --glider-position: calc((100vw - var(--width)) / 2) calc(var(--circle-radius)/2 + var(--circle-border-size) + var(--margin) - var(--glider-size)/2);
+
+  /* colors */
+
 }
 
 /* the glider */
 #prof {
-  background: #ccc url(./img/glider.svg) 0 calc(25vmin - 5vw + 10px + var(--margin)) repeat-x fixed;
-  background-size: 10vw;
+  background: #ccc url(../img/glider.svg) repeat-x fixed;
+  background-size: calc(var(--glider-size));
+  background-position: var(--glider-position);
   padding: var(--margin);
 }
 
+/* TODO line */
+
 /* the circle with prof img */
 #prof > img {
-  width: 50vmin;
-  height: 50vmin;
+  width: var(--circle-radius);
+  height: var(--circle-radius);
   display: block;
   margin-left: auto;
   margin-right: auto;
   border-radius: 50%;
-  border: black 10px solid;
+  border: black var(--circle-border-size) solid;
 }
 
 /* hide scrollbar */
@@ -44,6 +61,12 @@ html::-webkit-scrollbar {
 body {
   margin: 0;
   font-family: 'Blinker', sans-serif;
+}
+
+#container {
+  width: var(--width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h1 {
@@ -77,17 +100,29 @@ p {
   padding-top: var(--margin-4);
 }
 
-div#desc {
+#desc {
   width: 100%;
   background-color: #567;
 }
 
 #desc > p {
-  font-size: 2.5vw;
+  font-size: 2rem;
   padding-bottom: 1em;
   width: var(--fi-a);
   display: block;
   margin: auto;
   color: #abc;
   letter-spacing: .1em;
+}
+
+#debug {
+  padding: 3px;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  display: /**/block/*/ none /*/;
+  /*
+    To switch display you should only remove or add first asterisk
+  */
 }

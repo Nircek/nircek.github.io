@@ -1,0 +1,8 @@
+:root {
+  --margin: 2px;
+  --glider-number: 6;
+}
+
+#debug {
+  background-color: red;
+}
