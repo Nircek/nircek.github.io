@@ -13,7 +13,7 @@
 }
 
 /* the glider */
-div#prof {
+#prof {
   background: #ccc url(./img/glider.svg) 0 calc(25vmin - 5vw + 10px + var(--margin)) repeat-x fixed;
   background-size: 10vw;
   padding: var(--margin);
@@ -57,14 +57,22 @@ p {
   text-align: center;
 }
 
+.nick {
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 2px;
+}
+
 .aka {
+  color: #eee;
   font-size: 0.5em;
   color: #222;
   font-style: normal;
   font-weight: 300;
+  -webkit-text-stroke-width: 0;
 }
 
-.info {
+#info {
   background-color: #666;
   padding-top: var(--margin-4);
 }
@@ -80,7 +88,6 @@ div#desc {
   width: var(--fi-a);
   display: block;
   margin: auto;
-  color: #e0dfdc;
-  letter-spacing: .1em; /* https://htmlcheatsheet.com/css/ Text Shadow Deep */
-  text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+  color: #abc;
+  letter-spacing: .1em;
 }
