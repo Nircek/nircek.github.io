@@ -17,6 +17,8 @@
   --width: 100vw;
   --circle-radius: 50vmin;
   --circle-border-size: 10px;
+  --info-cover: 0.1;
+  --info-covering: calc(-2 * var(--circle-radius) * var(--info-cover));
 
   --glider-number: 12;
   --glider-size: calc(var(--width) / var(--glider-number));
@@ -28,13 +30,12 @@
 
 /* the glider */
 #prof {
+  margin: 0;
   background: #ccc url(../img/glider.svg) repeat-x fixed;
   background-size: calc(var(--glider-size));
   background-position: var(--glider-position);
   padding: var(--margin);
 }
-
-/* TODO line */
 
 /* the circle with prof img */
 #prof > img {
@@ -45,6 +46,7 @@
   margin-right: auto;
   border-radius: 50%;
   border: black var(--circle-border-size) solid;
+  position: relative;
 }
 
 /* hide scrollbar */
@@ -55,7 +57,6 @@ html {
 html::-webkit-scrollbar {
     display: none;
 }
-
 
 /* Blinker font */
 body {
@@ -69,18 +70,16 @@ body {
   margin-right: auto;
 }
 
-h1 {
+#info > header {
+  margin: 0;
   text-align: center;
   font-size: 10vh;
-  line-height: .7em;
-  margin: 0;
-}
-
-p {
-  text-align: center;
+  line-height: 50%;
+  padding-bottom: var(--margin-2);
 }
 
 .nick {
+  font-weight: 700;
   -webkit-text-fill-color: black;
   -webkit-text-stroke-color: white;
   -webkit-text-stroke-width: 2px;
@@ -89,15 +88,13 @@ p {
 .aka {
   color: #eee;
   font-size: 0.5em;
-  color: #222;
-  font-style: normal;
   font-weight: 300;
-  -webkit-text-stroke-width: 0;
 }
 
 #info {
+  margin-top: var(--info-covering);
+  padding-top: calc(-1 * var(--info-covering) + var(--margin-4));
   background-color: #666;
-  padding-top: var(--margin-4);
 }
 
 #desc {
