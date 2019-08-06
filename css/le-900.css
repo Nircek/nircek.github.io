@@ -2,6 +2,9 @@
   --margin: 4px;
   --glider-number: 9;
   --stroke-width: 1px;
+  --circle-radius: 60vmin;
+  --circle-border-size: 8px;
+  --desc-size: 0.4em;
 }
 
 #debug {
