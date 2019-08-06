@@ -1,6 +1,9 @@
 :root {
   --margin: 2px;
   --glider-number: 6;
+  --circle-radius: 70vw;
+  --circle-border-size: 6px;
+  --desc-size: 0.3em;
 }
 
 #debug {

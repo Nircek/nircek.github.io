@@ -1,6 +1,7 @@
 :root {
   --margin: 4px;
   --glider-number: 9;
+  --stroke-width: 1px;
 }
 
 #debug {

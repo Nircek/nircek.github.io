@@ -19,6 +19,8 @@
   --circle-border-size: 10px;
   --info-cover: 0.1;
   --info-covering: calc(-2 * var(--circle-radius) * var(--info-cover));
+  --desc-size: 0.5em;
+  --stroke-width: 2px;
 
   --glider-number: 12;
   --glider-size: calc(var(--width) / var(--glider-number));
@@ -70,10 +72,13 @@ body {
   margin-right: auto;
 }
 
+#info {
+  font-size: 10vh;
+}
+
 #info > header {
   margin: 0;
   text-align: center;
-  font-size: 10vh;
   line-height: 50%;
   padding-bottom: var(--margin-2);
 }
@@ -82,7 +87,7 @@ body {
   font-weight: 700;
   -webkit-text-fill-color: black;
   -webkit-text-stroke-color: white;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: var(--stroke-width);
 }
 
 .aka {
@@ -98,18 +103,18 @@ body {
 }
 
 #desc {
-  width: 100%;
+  padding: 1vw;
+  width: calc(100% - 2vw);
   background-color: #567;
 }
 
 #desc > p {
-  font-size: 2rem;
-  padding-bottom: 1em;
-  width: var(--fi-a);
+  font-size: var(--desc-size);
   display: block;
-  margin: auto;
+  margin: 0 auto 0 auto;
   color: #abc;
   letter-spacing: .1em;
+  text-align: center;
 }
 
 #debug {
