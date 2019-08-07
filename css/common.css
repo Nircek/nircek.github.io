@@ -19,6 +19,7 @@
   --circle-border-size: 10px;
   --info-cover: 0.1;
   --info-covering: calc(-2 * var(--circle-radius) * var(--info-cover));
+  --info-size: 8vmin;
   --desc-size: 0.5em;
   --stroke-width: 2px;
 
@@ -72,10 +73,6 @@ body {
   margin-right: auto;
 }
 
-#info {
-  font-size: 10vmax;
-}
-
 #info > header {
   margin: 0;
   text-align: center;
@@ -97,6 +94,7 @@ body {
 }
 
 #info {
+  font-size: var(--info-size);
   margin-top: var(--info-covering);
   padding-top: calc(-1 * var(--info-covering) + var(--margin-4));
   background-color: #666;
