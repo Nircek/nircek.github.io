@@ -126,3 +126,19 @@ body {
     To switch display you should only remove or add first asterisk
   */
 }
+
+.about-start-sel:before {
+  content: " {";
+}
+
+.about-sep-sel:before {
+  content: ";";
+}
+
+.about-sep-val:before {
+  content: ":";
+}
+
+.about-end-sel:before {
+  content: "}";
+}
