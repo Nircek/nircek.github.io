@@ -6,6 +6,7 @@
   --circle-border-size: 8px;
   --info-size: 12vmin;
   --desc-size: 0.4em;
+  --main-font-size: 2vw;
 }
 
 #debug {
