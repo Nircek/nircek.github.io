@@ -140,6 +140,7 @@ main {
   font-family: "Source Code Pro", monospace;
   font-size: var(--main-font-size);
   background-color: #ccc;
+  color: #000;
   width: 60ch;
   padding: 1em;
   margin: auto;
@@ -155,6 +156,14 @@ main {
 }
 
 .about-sep-val:before {
-  content: ":";
+  content: ":\00a0";
   font-style: normal;
+}
+
+.comment:before {
+  content: "//";
+}
+.comment {
+  color: #666;
+  font-style: italic;
 }
