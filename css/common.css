@@ -28,6 +28,7 @@
   --glider-position: calc((100vw - var(--width)) / 2) calc(var(--circle-radius)/2 + var(--circle-border-size) + var(--margin) - var(--glider-size)/2);
 
   --main-font-size: 1.5vw;
+  --main-width: 64ch;
   /* colors */
 
 }
@@ -141,12 +142,12 @@ main {
   font-size: var(--main-font-size);
   background-color: #ccc;
   color: #000;
-  width: 60ch;
+  width: var(--main-width);
   padding: 1em;
   margin: auto;
 }
 
-.about-sel {
+.tab {
   margin-left: 4ch;
 }
 
@@ -160,9 +161,15 @@ main {
   font-style: normal;
 }
 
+.about-sep-sep:before {
+  content: ",";
+  font-style: normal;
+}
+
 .comment:before {
   content: "//";
 }
+
 .comment {
   color: #666;
   font-style: italic;
