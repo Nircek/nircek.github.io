@@ -151,8 +151,10 @@ main {
 
 .about-sep-sel:before {
   content: ";";
+  font-style: normal;
 }
 
 .about-sep-val:before {
   content: ":";
+  font-style: normal;
 }
