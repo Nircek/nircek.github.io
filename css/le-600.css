@@ -5,7 +5,8 @@
   --desc-size: 0.3em;
   --main-font-size: 2.3vw;
   --ribbon-extra-length: .2em;
-  --further-length: .1em;
+  --further-scale: 0;
+  --further-length: 0;
 }
 
 #debug {
