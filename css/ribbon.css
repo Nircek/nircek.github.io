@@ -1,0 +1,65 @@
+:root {
+  --ribbon-fg: #fff;
+  --ribbon-bg: #c32;
+  --ribbon-bg-2: #b21;
+  --ribbon-bg-3: #a10;
+  --ribbon-width: 1.3em;
+  --ribbon-extra-length: 0.7em;
+  --further-scale: 0.7;
+  --further-width: calc(var(--ribbon-width) * var(--further-scale));
+  --further-bottom: -.7em;
+  --further-length: .4em;
+}
+.ribbon {
+  /* modified https://codepen.io/JJimmyFlynn/pen/bkGIL code by John Flynn (@JJimmyFlynn) */
+  position: relative;
+  margin: 1em calc(-.5em - var(--ribbon-extra-length));
+  padding: calc(var(--ribbon-width) - var(--main-font-size) * 2);
+
+  text-align: center;
+  font-size: calc(var(--main-font-size) * 2);
+  letter-spacing: 3px;
+
+  color: var(--ribbon-fg);
+  background-color: var(--ribbon-bg);
+}
+
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: var(--further-bottom);
+  border: var(--further-width) solid var(--ribbon-bg-2);;
+  z-index: -2;
+}
+
+.ribbon:before {
+  left: calc(-1 * var(--further-width) - var(--further-length));
+  border-right-width: calc(1em  + var(--further-length));
+  border-left-color: transparent;
+}
+
+.ribbon:after {
+  right: calc(-1 * var(--further-width) - var(--further-length));
+  border-left-width: calc(1em  + var(--further-length));
+  border-right-color: transparent;
+}
+
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  bottom: calc(var(--further-bottom) + .01em);
+  border-style: solid;
+  border-color: var(--ribbon-bg-3) transparent transparent transparent;
+  z-index: -1;
+}
+
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: calc(var(--further-bottom) * -1) 0 0 1em;
+}
+
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: calc(var(--further-bottom) * -1) 1em 0 0;
+}
