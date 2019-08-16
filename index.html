@@ -9,12 +9,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Blinker:300,400,700|Source+Code+Pro:600&display=swap&subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="css/ribbon.css">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css">
-  <link rel="stylesheet" href="css/le-900.css" media="screen and (max-width: 900px)">
+  <!--<link rel="stylesheet" href="css/le-900.css" media="screen and (max-width: 900px)">
   <link rel="stylesheet" href="css/le-600.css" media="screen and (max-width:600px)">
-  <link rel="stylesheet" href="css/gt-900.css" media="screen and (min-width:901px), print, speech">
+  <link rel="stylesheet" href="css/gt-900.css" media="screen and (min-width:901px), print, speech">-->
   <script>
   function debug() {
     setInterval(
@@ -28,73 +28,86 @@ window.innerHeight;
 </head>
 <body onload="debug();">
   <div id="container">
-    <figure id="prof">
-      <img src="./img/prof.jpg" alt="Nircek's face">
-    </figure>
-    <section id="info">
+    <header>
+      <div id="gliders">
+        <div id="circle">
+          <img src="./img/prof.jpg" alt="Nircek's face">
+        </div>
+      </div>
+      <article>
+        <h1>Nircek</h1>
+        <h2>Marcin Zepp</h2>
+        <section>
+          <p>
+            I am a human who tries to use<br>
+            different programming languages<br>
+            ​​to do something interesting.
+          </p>
+        </section>
+      </article>
+    </header>
+  <main>
+    <article>
       <header>
-        <span class="nick">Nircek</span><br>
-        <span class="aka">Marcin Zepp</span>
+        <h1><strong>Basic info</strong></h1>
       </header>
-      <article id="desc">
-        <p>
-        I am a human who tries to use<br>
-        different programming languages<br>
-        ​​to do something interesting.
+      <p>
+        <i class="fas fa-id-card fa-fw"></i> {
+        <div class="tab">
+          <i class="fas fa-user fa-fw"></i><i class="about-sep-val"></i>Nircek (Marcin Zepp)<i class="about-sep-sel"></i><br>
+          <i class="fas fa-calendar fa-fw"></i><i class="about-sep-val"></i>16 yo, February 2003<i class="about-sep-sel"></i><br>
+          <i class="fas fa-clock fa-fw"></i><i class="about-sep-val"></i>Europe/Warsaw, CET/CEST, UTC+01:00/UTC+02:00<i class="about-sep-sel"></i><br>
+          <i class="fab fa-github fa-fw"></i><i class="about-sep-val"></i><a href="https://github.com/Nircek">Nircek</a><i class="about-sep-sel"></i><br>
+          <i class="fab fa-facebook fa-fw"></i><i class="about-sep-val"></i><a href="https://www.facebook.com/nircek2103">nircek2103</a><i class="about-sep-sel"></i><br>
+          <i class="fab fa-keybase fa-fw"></i><i class="about-sep-val"></i><a href="https://keybase.io/nircek">nircek</a><i class="about-sep-sel"></i><br>
+          <i class="fab fa-discord fa-fw"></i><i class="about-sep-val"></i>Nircek#3424<i class="about-sep-sel"></i><br>
+          <i class="fab fa-telegram fa-fw"></i><i class="about-sep-val"></i><a href="https://t.me/nircek">nircek</a><i class="about-sep-sel"></i><br>
+          <i class="fab fa-stack-overflow fa-fw"></i><i class="about-sep-val"></i><a href="https://stackoverflow.com/users/6732111/j-kluseczka">J Kluseczka</a><i class="about-sep-sel"></i><br>
+          <i class="fas fa-link fa-fw"></i><i class="about-sep-val"></i><a href="https://nircek.github.io">nircek.github.io</a><i class="about-sep-sel"></i><br>
+          <i class="fab fa-twitter fa-fw"></i><i class="about-sep-val"></i><a href="https://twitter.com/nircek2103">nircek2103</a><i class="about-sep-sel"></i><br>
+          <!--<i class="fab fa-skype fa-fw"></i><i class="about-sep-val"></i>marcinek0302<i class="about-sep-sel"></i><br>-->
+          <i class="fab fa-reddit fa-fw"></i><i class="about-sep-val"></i><a href="https://www.reddit.com/user/nircek">nircek</a><i class="about-sep-sel"></i><br>
+          <i class="fab fa-instagram fa-fw"></i><i class="about-sep-val"></i><a href="https://www.instagram.com/nircus/">nircus</a><i class="about-sep-sel"></i><br>
+          <i class="fas fa-envelope fa-fw"></i><i class="about-sep-val"></i>[<br>
+          <div class="tab">
+            <a href="mailto:m.zepp@outlook.com">m.zepp@outlook.com</a><i class="about-sep-sep"></i><br>
+            <div class="comment">
+              private email<br>
+            </div>
+            <a href="mailto:nircek-2103@protonmail.com">nircek-2103@protonmail.com</a><br>
+            <div class="comment">
+              Nircek's email (programming, IT, business stuff)
+            </div>
+          ]<i class="about-sep-sel"></i></div>
+          <i class="fas fa-key fa-fw"></i><i class="about-sep-val"></i>[<br>
+          <div class="tab">
+            <a href="https://keybase.io/nircek/pgp_keys.asc?fingerprint=4aea62bbaa31ec21a89357e0a24b58d278761851">
+              Marcin Zepp &lt;m.zepp@outlook.com&gt;<!--
+            --></a><i class="about-sep-sep"></i><br>
+            <div class="comment">
+              <i class="fas fa-fingerprint fa-fw"></i>&nbsp;4AEA62BBAA31EC21A89357E0A24B58D278761851<br>
+            </div>
+            <a href="https://keybase.io/nircek/pgp_keys.asc?fingerprint=93f99de4c1d27db264ed91bd38a92c1a795c48a2">
+              Nircek-2103 &lt;nircek-2103@protonmail.com&gt;
+            </a><br>
+            <div class="comment">
+              <i class="fas fa-fingerprint fa-fw"></i>&nbsp;93F99DE4C1D27DB264ED91BD38A92C1A795C48A2<br>
+            </div>
+          ]<i class="about-sep-sel"></i></div>
+          <i class="fas fa-copyright fa-fw"></i><i class="about-sep-val"></i>MIT license<i class="about-sep-sel"></i><br>
+          <i class="fab fa-bitcoin fa-fw"></i><i class="about-sep-val"></i>16RaNkkeHRu531mmMF6y3c2BuVQVRJpXtr<i class="about-sep-sel"></i><br>
+          <i class="fas fa-comment-alt fa-fw"></i><i class="about-sep-val"></i>Have a nice day! <i class="fas fa-smile"></i><i class="about-sep-sel"></i><br>
+        </div>
+        }
         </p>
       </article>
-    </section>
+    </main>
+    <footer>
+      <!-- social icons -->
+      <!-- copyright -->
+      <!-- made with <3 or something -->
+    </footer>
   </div>
-  <main>
-    <h2 class="ribbon"><strong class="ribbon-content">Basic info</strong></h2>
-    <i class="fas fa-id-card fa-fw"></i> {
-    <div class="tab">
-      <i class="fas fa-user fa-fw"></i><i class="about-sep-val"></i>Nircek (Marcin Zepp)<i class="about-sep-sel"></i><br>
-      <i class="fas fa-calendar fa-fw"></i><i class="about-sep-val"></i>16 yo, February 2003<i class="about-sep-sel"></i><br>
-      <i class="fas fa-clock fa-fw"></i><i class="about-sep-val"></i>Europe/Warsaw, CET/CEST, UTC+01:00/UTC+02:00<i class="about-sep-sel"></i><br>
-      <i class="fab fa-github fa-fw"></i><i class="about-sep-val"></i><a href="https://github.com/Nircek">Nircek</a><i class="about-sep-sel"></i><br>
-      <i class="fab fa-facebook fa-fw"></i><i class="about-sep-val"></i><a href="https://www.facebook.com/nircek2103">nircek2103</a><i class="about-sep-sel"></i><br>
-      <i class="fab fa-keybase fa-fw"></i><i class="about-sep-val"></i><a href="https://keybase.io/nircek">nircek</a><i class="about-sep-sel"></i><br>
-      <i class="fab fa-discord fa-fw"></i><i class="about-sep-val"></i>Nircek#3424<i class="about-sep-sel"></i><br>
-      <i class="fab fa-telegram fa-fw"></i><i class="about-sep-val"></i><a href="https://t.me/nircek">nircek</a><i class="about-sep-sel"></i><br>
-      <i class="fab fa-stack-overflow fa-fw"></i><i class="about-sep-val"></i><a href="https://stackoverflow.com/users/6732111/j-kluseczka">J Kluseczka</a><i class="about-sep-sel"></i><br>
-      <i class="fas fa-link fa-fw"></i><i class="about-sep-val"></i><a href="https://nircek.github.io">nircek.github.io</a><i class="about-sep-sel"></i><br>
-      <i class="fab fa-twitter fa-fw"></i><i class="about-sep-val"></i><a href="https://twitter.com/nircek2103">nircek2103</a><i class="about-sep-sel"></i><br>
-      <!--<i class="fab fa-skype fa-fw"></i><i class="about-sep-val"></i>marcinek0302<i class="about-sep-sel"></i><br>-->
-      <i class="fab fa-reddit fa-fw"></i><i class="about-sep-val"></i><a href="https://www.reddit.com/user/nircek">nircek</a><i class="about-sep-sel"></i><br>
-      <i class="fab fa-instagram fa-fw"></i><i class="about-sep-val"></i><a href="https://www.instagram.com/nircus/">nircus</a><i class="about-sep-sel"></i><br>
-      <i class="fas fa-envelope fa-fw"></i><i class="about-sep-val"></i>[<br>
-      <div class="tab">
-        <a href="mailto:m.zepp@outlook.com">m.zepp@outlook.com</a><i class="about-sep-sep"></i><br>
-        <div class="comment">
-          private email<br>
-        </div>
-        <a href="mailto:nircek-2103@protonmail.com">nircek-2103@protonmail.com</a><br>
-        <div class="comment">
-          Nircek's email (programming, IT, business stuff)
-        </div>
-      ]<i class="about-sep-sel"></i></div>
-      <i class="fas fa-key fa-fw"></i><i class="about-sep-val"></i>[<br>
-      <div class="tab">
-        <a href="https://keybase.io/nircek/pgp_keys.asc?fingerprint=4aea62bbaa31ec21a89357e0a24b58d278761851">
-          Marcin Zepp &lt;m.zepp@outlook.com&gt;<!--
-        --></a><i class="about-sep-sep"></i><br>
-        <div class="comment">
-          <i class="fas fa-fingerprint fa-fw"></i>&nbsp;4AEA62BBAA31EC21A89357E0A24B58D278761851<br>
-        </div>
-        <a href="https://keybase.io/nircek/pgp_keys.asc?fingerprint=93f99de4c1d27db264ed91bd38a92c1a795c48a2">
-          Nircek-2103 &lt;nircek-2103@protonmail.com&gt;
-        </a><br>
-        <div class="comment">
-          <i class="fas fa-fingerprint fa-fw"></i>&nbsp;93F99DE4C1D27DB264ED91BD38A92C1A795C48A2<br>
-        </div>
-      ]<i class="about-sep-sel"></i></div>
-      <i class="fas fa-copyright fa-fw"></i><i class="about-sep-val"></i>MIT license<i class="about-sep-sel"></i><br>
-      <i class="fab fa-bitcoin fa-fw"></i><i class="about-sep-val"></i>16RaNkkeHRu531mmMF6y3c2BuVQVRJpXtr<i class="about-sep-sel"></i><br>
-      <i class="fas fa-comment-alt fa-fw"></i><i class="about-sep-val"></i>Have a nice day! <i class="fas fa-smile"></i><i class="about-sep-sel"></i><br>
-    </div>
-  }
-  </main>
   <div id="debug"></div>
 </body>
 </html>
