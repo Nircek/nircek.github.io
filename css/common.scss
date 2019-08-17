@@ -1,46 +1,11 @@
 ---
 ---
 @mixin media-query($min: 0, $max: 0, $orientation: 0) {
-  @if $min != 0  and $max == 0 and $orientation == 0 {
-    @media only screen and (min-width: $min) {
-      @content;
-    }
-  }
-  @else if $max != 0 and $min == 0 and $orientation == 0 {
-    @media only screen and (max-width: $max) {
-      @content;
-    }
-  }
-  @else if $max != 0 and $min != 0 and $orientation == 0 {
-    @media only screen and (min-width: $min) and (max-width: $max) {
-      @content;
-    }
-  }
-  @else if $max == 0 and $min == 0 and $orientation == 0 {
-    @media only screen {
-      @content;
-    }
-  }
-  @else if $min != 0  and $max == 0 and $orientation != 0 {
-    @media only screen and (min-width: $min) and (orientation: $orientation) {
-      @content;
-    }
-  }
-  @else if $max != 0 and $min == 0 and $orientation != 0 {
-    @media only screen and (max-width: $max) and (orientation: $orientation) {
-      @content;
-    }
-  }
-  @else if $max != 0 and $min != 0 and $orientation != 0 {
-    @media only screen and (min-width: $min) and (max-width: $max) and (orientation: $orientation) {
-      @content;
-    }
-  }
-  @else if $max == 0 and $min == 0 and $orientation != 0 and (orientation: $orientation) {
-    @media only screen {
-      @content;
-    }
-  }
+  $query: "only screen";
+  @if $min != 0 { $query: $query + " and (min-width: #{$min})"; }
+  @if $max != 0 { $query: $query + " and (max-width: #{$max})"; }
+  @if $orientation != 0 { $query: $query + " and (orientation: #{$orientation})"; }
+  @media #{$query} { @content; }
 }
 @mixin phone($orientation: 0) {
   @include media-query(0, 600px, $orientation) {
