@@ -29,6 +29,24 @@
 
 $deploy-color: random-color();
 
+@mixin setup-color($bg, $fg: 0, $nofg: 0) {
+  background-color: $bg;
+  @if $fg == 0 {
+    color: if(lightness($bg) < 50%, white, black);
+  } @else {
+    @if abs(lightness($bg) - lightness($fg)) < 40% {
+      @warn $bg and $fg may gone wrong
+    }
+    @if $nofg == 0 {
+      color: $fg;
+    }
+  }
+}
+$surface: #ccc;
+$primary: #666;
+$accent: #b21;
+$secondary: adjust-hue(darken($accent, 14%), 180deg);
+
 :root {
   /* math magic useless stuff */
   --sqrt-2: 1.4142135623730951;
@@ -45,12 +63,11 @@ $deploy-color: random-color();
   --margin-2: calc(var(--margin) * 2);
   --margin-4: calc(var(--margin) * 2);
 
-  --width: 100vw;
   --circle-radius: 50vmin;
-  @include tablet {--circle-radius: 60vmin;} @include phone(portrait) {--circle-radius: 70vmin;}
+  @include tablet {--circle-radius: 60vmin;} @include phone(portrait) {--circle-radius: 65vmin;}
   --circle-border-size: 10px;
   @include tablet {--circle-border-size: 8px;} @include phone {--circle-border-size: 6px;}
-  --info-cover: .1;
+  --info-cover: .07;
   --info-covering: calc(-2 * var(--circle-radius) * var(--info-cover));
   --info-size: 8vmin;
   @include tablet {--info-size: 12vmin;} @include phone(portrait) {--info-size: 16vmin;}
@@ -60,18 +77,14 @@ $deploy-color: random-color();
 
   --glider-number: 12;
   @include tablet {--glider-number: 9;} @include phone {--glider-number: 6;}
-  --glider-size: calc(var(--width) / var(--glider-number));
-  --glider-position: calc((100vw - var(--width)) / 2) calc(var(--circle-radius)/2 + var(--circle-border-size) + var(--margin) - var(--glider-size)/2);
+  --glider-size: calc(100vw / var(--glider-number));
+  --glider-position: calc(100vw / 2) calc(var(--circle-radius)/2 + var(--circle-border-size) + var(--margin) - var(--glider-size)/2);
 
-  --main-font-size: 1.5vw;
-  @include tablet {--main-font-size: 2.3vw;} @include phone {--main-font-size: 2vw;}
+  --main-font-size: 1.6vw;
+  @include tablet {--main-font-size: 1.9vw;} @include phone {--main-font-size: 2.1vw;}
   --main-width: 64ch;
 
   /* ribbon */
-  --ribbon-fg: #fff;
-  --ribbon-bg: #c32;
-  --ribbon-bg-2: #b21;
-  --ribbon-bg-3: #a10;
   --ribbon-width: 1.3em;
   --ribbon-extra-length: 0.7em;
   @include phone {--ribbon-extra-length: .2em;}
@@ -90,9 +103,8 @@ html {
   }
   body {
     margin: 0;
-    overflow-x: hidden;
     font-family: 'Blinker', sans-serif;
-    background-color: #276;
+    background-color: $secondary;
   }
 }
 #container {
@@ -103,7 +115,7 @@ html {
 
 		#gliders {
       margin: 0;
-      background: #ccc url(../img/glider.svg) repeat-x fixed;
+      background: $surface url(../img/glider.svg) repeat-x fixed;
       background-size: calc(var(--glider-size));
       background-position: var(--glider-position);
       padding: var(--margin);
@@ -128,7 +140,7 @@ html {
       font-size: var(--info-size);
       margin-top: var(--info-covering);
       padding-top: calc(-1 * var(--info-covering));
-      background-color: #666;
+      @include setup-color($primary);
 			h1 {
         font-weight: 700;
         -webkit-text-fill-color: black;
@@ -137,7 +149,6 @@ html {
 			}
 
 			h2 {
-        color: #eee;
         font-size: 0.5em;
         font-weight: 300;
 			}
@@ -146,12 +157,11 @@ html {
         margin-top: 1rem;
         padding: 1vw;
         width: calc(100% - 2vw);
-        background-color: #567;
+        @include setup-color(lighten($secondary, 0));
 				p {
           font-size: var(--desc-size);
           display: block;
           margin: 0 auto 0 auto;
-          color: #abc;
           letter-spacing: .1em;
           text-align: center;
 				}
@@ -163,15 +173,17 @@ html {
     font-family: "Source Code Pro", monospace;
     font-size: var(--main-font-size);
     line-height: 115%;
-    background-color: #ccc;
-    color: #000;
+    @include setup-color($surface);
     width: var(--main-width);
     padding: 1em;
     margin: auto;
     a {
-      color: #a00;
+      @include setup-color($surface, $accent);
       text-decoration: inherit;
       font-weight: 900;
+      &:hover {
+        @include setup-color($surface, darken($accent, 14%));
+      }
     }
 		article {
 
@@ -187,15 +199,14 @@ html {
           font-size: calc(var(--main-font-size) * 2);
           letter-spacing: 3px;
 
-          color: var(--ribbon-fg);
-          background-color: var(--ribbon-bg);
+          @include setup-color($accent);
 
           &:before, &:after {
             content: "";
             position: absolute;
             display: block;
             bottom: var(--further-bottom);
-            border: var(--further-width) solid var(--ribbon-bg-2);;
+            border: var(--further-width) solid darken($accent, 7%);
             z-index: -2;
           }
           &:before {
@@ -214,7 +225,7 @@ html {
             position: absolute;
             bottom: calc(var(--further-bottom) + .01em);
             border-style: solid;
-            border-color: var(--ribbon-bg-3) transparent transparent transparent;
+            border-color: darken($accent, 14%) transparent transparent transparent;
             z-index: -1;
             }
             &:before {
@@ -247,7 +258,7 @@ html {
         &:before {
           content: "//";
         }
-        color: #666;
+        @include setup-color($surface, $primary);
         font-style: italic;
       }
 			.tab {
@@ -270,8 +281,8 @@ html {
   &:after {
     content: "#{$deploy-color}";
   }
-  background-color: white;
-  @include monitor {background-color: lightgreen;} @include tablet {background-color: yellow;} @include phone {background-color: red;} @include phone(portrait) {background-color: orange;}
+  @include setup-color(white);
+  @include monitor {@include setup-color(lightgreen);} @include tablet {@include setup-color(yellow);} @include phone {@include setup-color(red);} @include phone(portrait) {@include setup-color(orange);}
   display: /**/block/*/ none /*/;
   /*
     To switch display you should only remove or add first asterisk
