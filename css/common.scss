@@ -180,6 +180,7 @@ html {
     width: var(--main-width);
     padding: 1em;
     margin: auto;
+    line-height: 1.25;
     a {
       @include setup-color($surface, $accent);
       text-decoration: inherit;
