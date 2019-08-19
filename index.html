@@ -1,3 +1,11 @@
+---
+---
+{%comment%}
+Thanks for reading the sources! :)
+The number below is a number of repos that will be displayed (except pinned repos but a pinned repo counts if it has been updated recently).
+If you don't understand this syntax, research about Jekyll and Liquid in the context of Github Pages!
+{%endcomment%}
+{% assign number = 4 %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,17 +39,15 @@ window.innerHeight;
     <header>
       <div id="gliders">
         <div id="circle">
-          <img src="./img/prof.jpg" alt="Nircek's face">
+          <img src="{{site.github.owner_gravatar_url}}" alt="Nircek's face">
         </div>
       </div>
       <article>
         <h1>Nircek</h1>
-        <h2>Marcin Zepp</h2>
+        <h2>{{ site.github.owner.name }}</h2>
         <section>
           <p>
-            I am a human who tries to use<br>
-            different programming languages<br>
-            ​​to do something interesting.
+            {{ site.github.owner.bio }}
           </p>
         </section>
       </article>
@@ -54,8 +60,9 @@ window.innerHeight;
       <p>
         <i class="fas fa-id-card fa-fw"></i> {
         <div class="tab">
-          <i class="fas fa-user fa-fw"></i><i class="about-sep-val"></i>Nircek (Marcin Zepp)<i class="about-sep-sel"></i><br>
+          <i class="fas fa-user fa-fw"></i><i class="about-sep-val"></i>Nircek ({{ site.github.owner.name }})<i class="about-sep-sel"></i><br>
           <i class="fas fa-calendar fa-fw"></i><i class="about-sep-val"></i>16 yo, February 2003<i class="about-sep-sel"></i><br>
+          <!-- place: {{ site.github.owner.location }}; -->
           <i class="fas fa-clock fa-fw"></i><i class="about-sep-val"></i>Europe/Warsaw, CET/CEST, UTC+01:00/UTC+02:00<i class="about-sep-sel"></i><br>
           <i class="fab fa-github fa-fw"></i><i class="about-sep-val"></i><a href="https://github.com/Nircek">Nircek</a><i class="about-sep-sel"></i><br>
           <i class="fab fa-facebook fa-fw"></i><i class="about-sep-val"></i><a href="https://www.facebook.com/nircek2103">nircek2103</a><i class="about-sep-sel"></i><br>
@@ -101,11 +108,25 @@ window.innerHeight;
         }
         </p>
       </article>
+      <article>
+        <header><h1>My repos</h1></header>
+          {% assign sorted = site.github.public_repositories | sort: 'updated_at' | reverse %}
+          {% assign pinned = 'resistorer maze snake hello-processing' | split: ' ' %}
+          {% for r in sorted %}
+            {% if number > 0 or pinned contains r.name %}
+              <a href="{{ r.html_url }}">{{ r.name }}</a> {{ r.description }}, {{ r.stargazers_count }} stars, {{ r.watchers_count }} watchers, {{ r.forks_count }} forks, {{ r.open_issues_count }} issues
+              {%if r.homepage and r.homepage != ''%}<a href="{{r.homepage}}">site</a>{%endif%} {{ r.updated_at | date: "%Y-%m-%d" }}<br>
+            {% endif %}
+            {% assign number = number | minus: 1 %}
+          {% endfor %}
+      </article>
     </main>
     <footer>
       <!-- social icons -->
       <!-- copyright -->
       <!-- made with <3 or something -->
+      {{ site.github.build_revision }}
+      {{ site.github.build_revision | slice: 0, 7}}
     </footer>
   </div>
   <div id="debug"></div>
