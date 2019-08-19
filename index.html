@@ -110,43 +110,46 @@ window.innerHeight;
       </article>
       <article>
         <header><h1>My repos</h1></header>
-          {% assign sorted = site.github.public_repositories | sort: 'updated_at' | reverse %}
-          {% assign pinned = 'resistorer maze snake hello-processing' | split: ' ' %}
-          {% for r in sorted %}
-            {% if number > 0 or pinned contains r.name %}
-              <div class="repo">
-                <div class="left">
-                  <a href="{{ r.html_url }}">
-                    <h1>{{ r.name }}</h1>
-                    <h2>{{ r.description }}</h2>
-                  </a>
-                  <p>
-                    <a href="{{ r.html_url }}/stargazers">{{ r.stargazers_count }}<i class="fas fa-star"></i></a>
-                    <a href="{{ r.html_url }}/watchers">{{ r.watchers_count }}<i class="fas fa-eye"></i></a>
-                    <a href="{{ r.html_url }}/network/members">{{ r.forks_count }}<i class="fas fa-utensils"></i></a>
-                    {% comment %}
-                      I know instead of a knife and a fork, there should be sth like
-                      <i class="fas fa-code-branch"></i> but it looks like branch
-                      icon so I don't want to have any misunderstandings.
-                    {% endcomment %}
-                    <a href="{{ r.html_url }}/issues">{{ r.open_issues_count }}<i class="fas fa-exclamation-circle"></i></a>
-                  </p>
-                </div>
-                <div class="right">
-                  {%if r.homepage and r.homepage != ''%}
-                    <div class="badges">
-                      <a href="{{r.homepage}}"><i class="fab fa-html5"></i></a>
-                    </div>
-                  {%endif%}
-                  <date>
-                    {{ r.updated_at | date: "%Y-%m-%d" }}
-                  </date>
-                </div>
-                <div style="clear: both;"></div>
+        {% assign left = site.github.owner.public_repos %}
+        {% assign sorted = site.github.public_repositories | sort: 'updated_at' | reverse %}
+        {% assign pinned = 'resistorer maze snake hello-processing' | split: ' ' %}
+        {% for r in sorted %}
+          {% if number > 0 or pinned contains r.name %}
+            {% assign left = left | minus: 1 %}
+            <div class="repo">
+              <div class="left">
+                <a href="{{ r.html_url }}">
+                  <h1>{{ r.name | upcase }}</h1>
+                  <h2>{{ r.description }}</h2>
+                </a>
+                <p>
+                  <a href="{{ r.html_url }}/stargazers">{{ r.stargazers_count }}<i class="fas fa-star fa-fw"></i></a>
+                  <a href="{{ r.html_url }}/watchers">{{ r.watchers_count }}<i class="fas fa-eye fa-fw"></i></a>
+                  <a href="{{ r.html_url }}/network/members">{{ r.forks_count }}<i class="fas fa-utensils fa-fw"></i></a>
+                  {% comment %}
+                    I know instead of a knife and a fork, there should be sth like
+                    <i class="fas fa-code-branch"></i> but it looks like branch
+                    icon so I don't want to have any misunderstandings.
+                  {% endcomment %}
+                  <a href="{{ r.html_url }}/issues">{{ r.open_issues_count }}<i class="fas fa-exclamation-circle fa-fw"></i></a>
+                </p>
               </div>
-            {% endif %}
-            {% assign number = number | minus: 1 %}
-          {% endfor %}
+              <div class="right">
+                {%if r.homepage and r.homepage != ''%}
+                  <div class="badges">
+                    <a href="{{r.homepage}}"><i class="fab fa-html5 fa-fw"></i></a>
+                  </div>
+                {%endif%}
+                <date>
+                  {{ r.updated_at | date: "%Y-%m-%d" }}
+                </date>
+              </div>
+              <div style="clear: both;"></div>
+            </div>
+          {% endif %}
+          {% assign number = number | minus: 1 %}
+        {% endfor %}
+        <p>and <a href="{{ site.github.owner.html_url }}?tab=repositories">{{left}} repos more</a>!</p>
       </article>
     </main>
     <footer>

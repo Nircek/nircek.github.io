@@ -257,11 +257,23 @@ html {
         }
         .left {
           float: left;
-          width: 70%;
+          width: 80%;
+          h1 {
+            font-size: 120%;
+            letter-spacing: .01em;
+            line-height: 150%;
+          }
+          h2 {
+            font-size: 90%;
+            color: #333;
+          }
+          p {
+            line-height: 200%;
+          }
         }
         .right {
           float: left;
-          width: 30%;
+          width: 20%;
           div.badges {
             position: absolute;
             right: 1em;
