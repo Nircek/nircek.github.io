@@ -107,7 +107,7 @@ html {
   body {
     margin: 0;
     font-family: 'Blinker', sans-serif;
-    background-color: $background;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAI0lEQVQImWPgdnT/j44ZuB3d/0sHhsMxiqB2YjqmIIZKdAwATUEpIwvIzFQAAAAASUVORK5CYII=) repeat; // src: patternify.com; thanks to J. M.
   }
 }
 #container {
