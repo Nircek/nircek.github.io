@@ -29,8 +29,10 @@
 
 $deploy-color: random-color();
 
-@mixin setup-color($bg, $fg: 0, $nofg: 0) {
-  background-color: $bg;
+@mixin setup-color($bg, $fg: 0, $nofg: 0, $nobg: 0) {
+  @if $nobg == 0 {
+    background-color: $bg;
+  }
   @if $fg == 0 {
     color: if(lightness($bg) < 50%, #eee, black);
   } @else {
@@ -183,7 +185,7 @@ html {
     margin: auto;
     line-height: 1.25;
     a {
-      @include setup-color($surface, $accent);
+      @include setup-color($surface, $accent, $nobg: 1);
       text-decoration: inherit;
       font-weight: 900;
       &:hover {
@@ -244,8 +246,32 @@ html {
           }
         }
 			}
-      .fas {
-
+      div.repo {
+        margin: 1em var(--margin);
+        padding: 1em;
+        background-color: darken($surface, 10%);
+        position: relative;
+        a {
+          background-color: inherit;
+          color: inherit;
+        }
+        .left {
+          float: left;
+          width: 70%;
+        }
+        .right {
+          float: left;
+          width: 30%;
+          div.badges {
+            position: absolute;
+            right: 1em;
+          }
+          date {
+            position: absolute;
+            right: 1em;
+            bottom: 1em;
+          }
+        }
       }
       .about-sep-val:before {
         content: ":\00a0";
