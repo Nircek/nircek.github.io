@@ -278,7 +278,7 @@ html {
             position: absolute;
             right: 1em;
           }
-          date {
+          .date {
             position: absolute;
             right: 1em;
             bottom: 1em;
@@ -311,8 +311,41 @@ html {
 	}
 
 	footer {
+    font-size: 1em;
+    float: left;
+    width: 100%;
     background-color: #111;
     color: #eee;
+    $social-box: 8vw;
+    .social, .copyright, .open {
+      padding: 1rem;
+      float: left;
+      width: calc(33.333333% - 2rem);
+      text-align: center;
+      }
+    .social {
+      font-size: $social-box;
+    }
+    .copyright {
+      font-size: 2vw;
+      @include phone {
+        font-size: 4vw;
+      }
+      padding-top: $social-box;
+      p {
+        display: none;
+        @include monitor {
+          display: block;
+        }
+      }
+      a {
+        color: #faa;
+        text-decoration: none;
+        &:hover {
+          color: #fcc;
+        }
+      }
+    }
 	}
 }
 

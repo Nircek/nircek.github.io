@@ -16,7 +16,7 @@ If you don't understand this syntax, research about Jekyll and Liquid in the con
   <meta name="author" content="Nircek">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Blinker:300,400,700|Source+Code+Pro:600&display=swap&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Blinker:300,400,700%7CSource+Code+Pro:600&display=swap&subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-12/css/all.min.css">
@@ -57,7 +57,7 @@ window.innerHeight;
       <header>
         <h1><strong>Basic info</strong></h1>
       </header>
-      <p>
+      <code>
         <i class="fas fa-id-card fa-fw"></i> {
         <div class="tab">
           <i class="fas fa-user fa-fw"></i><i class="about-sep-val"></i>Nircek ({{ site.github.owner.name }})<i class="about-sep-sel"></i><br>
@@ -106,10 +106,10 @@ window.innerHeight;
           <i class="fas fa-comment-alt fa-fw"></i><i class="about-sep-val"></i>Have a nice day! <i class="fas fa-smile"></i><i class="about-sep-sel"></i><br>
         </div>
         }
-        </p>
-      </article>
+      </code>
+    </article>
       <article>
-        <header><h1>My repos</h1></header>
+        <header><h1><strong>My repos</strong></h1></header>
         {% assign left = site.github.owner.public_repos %}
         {% assign sorted = site.github.public_repositories | sort: 'updated_at' | reverse %}
         {% assign pinned = 'resistorer maze snake hello-processing' | split: ' ' %}
@@ -120,7 +120,9 @@ window.innerHeight;
               <div class="left">
                 <a href="{{ r.html_url }}">
                   <h1>{{ r.name | upcase }}</h1>
-                  <h2>{{ r.description }}</h2>
+                  {% if r.description %}
+                    <h2>{{ r.description }}</h2>
+                  {% endif %}
                 </a>
                 <p>
                   <a href="{{ r.html_url }}/stargazers">{{ r.stargazers_count }}<i class="fas fa-star fa-fw"></i></a>
@@ -140,9 +142,9 @@ window.innerHeight;
                     <a href="{{r.homepage}}"><i class="fab fa-html5 fa-fw"></i></a>
                   </div>
                 {%endif%}
-                <date>
+                <div class="date">
                   {{ r.updated_at | date: "%Y-%m-%d" }}
-                </date>
+                </div>
               </div>
               <div style="clear: both;"></div>
             </div>
@@ -153,12 +155,58 @@ window.innerHeight;
       </article>
     </main>
     <footer>
-      <!-- social icons -->
-      <!-- copyright -->
-      <!-- made with <3 or something -->
-      {{ site.github.build_revision }}
-      {{ site.github.build_revision | slice: 0, 7}}
+      <div class="social">
+        <i class="fab fa-discord"></i>
+        <i class="fab fa-keybase"></i>
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-github-square"></i>
+        <i class="fas fa-envelope-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-stack-overflow"></i>
+        <i class="fab fa-telegram-plane"></i>
+      </div>
+      <div class="copyright">
+        &copy; 2019 Nircek<br>
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          <img alt="Creative Commons License" style="border-width:0" src="data:image/png;base64,
+{%comment%}`curl --insecure -L https://i.creativecommons.org/l/by/4.0/88x31.png | base64`{%endcomment%}
+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">
+        </a>
+        <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
+      </div>
+      <div class="open">
+        &lt;3
+        <!-- made with <3 or something -->
+      </div>
+      <div style="clear: both; padding: 0; height: 0;"></div>
     </footer>
+    <div style="clear: both;"></div>
   </div>
   <div id="debug"></div>
 </body>
