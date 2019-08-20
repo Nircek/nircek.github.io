@@ -4,9 +4,7 @@
 Thanks for reading the sources! :)
 The number below is a number of repos that will be displayed (except pinned repos but a pinned repo counts if it has been updated recently).
 If you don't understand this syntax, research about Jekyll and Liquid in the context of Github Pages!
-{%endcomment%}
-{% assign number = 4 %}
-<!DOCTYPE html>
+{%endcomment%}{% assign number = 4 %}<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -46,6 +44,7 @@ window.innerHeight;
         <h1>Nircek</h1>
         <h2>{{ site.github.owner.name }}</h2>
         <section>
+          <h6>BIO</h6>
           <p>
             {{ site.github.owner.bio }}
           </p>
@@ -57,7 +56,7 @@ window.innerHeight;
       <header>
         <h1><strong>Basic info</strong></h1>
       </header>
-      <code>
+      <div class="code">
         <i class="fas fa-id-card fa-fw"></i> {
         <div class="tab">
           <i class="fas fa-user fa-fw"></i><i class="about-sep-val"></i>Nircek ({{ site.github.owner.name }})<i class="about-sep-sel"></i><br>
@@ -106,29 +105,29 @@ window.innerHeight;
           <i class="fas fa-comment-alt fa-fw"></i><i class="about-sep-val"></i>Have a nice day! <i class="fas fa-smile"></i><i class="about-sep-sel"></i><br>
         </div>
         }
-      </code>
+      </div>
     </article>
       <article>
-        <header><h1><strong>My repos</strong></h1></header>
-        {% assign left = site.github.owner.public_repos %}
-        {% assign sorted = site.github.public_repositories | sort: 'updated_at' | reverse %}
-        {% assign pinned = 'resistorer maze snake hello-processing' | split: ' ' %}
-        {% for r in sorted %}
-          {% if number > 0 or pinned contains r.name %}
-            {% assign left = left | minus: 1 %}
+        <header><h1><strong>My repos</strong></h1></header>{{""
+        }}{% assign left = site.github.owner.public_repos %}{{""
+        }}{% assign sorted = site.github.public_repositories | sort: 'updated_at' | reverse %}{{""
+        }}{% assign pinned = 'resistorer maze snake hello-processing' | split: ' ' %}{{""
+        }}{% for r in sorted %}{{""
+          }}{% if number > 0 or pinned contains r.name %}{{""
+            }}{% assign left = left | minus: 1 %}
             <div class="repo">
               <div class="left">
                 <a href="{{ r.html_url }}">
-                  <h1>{{ r.name | upcase }}</h1>
-                  {% if r.description %}
-                    <h2>{{ r.description }}</h2>
-                  {% endif %}
+                  <h1>{{ r.name | upcase }}</h1>{{""
+                  }}{% if r.description %}
+                  <h2>{{ r.description }}</h2>{{""
+                  }}{% endif %}
                 </a>
                 <p>
                   <a href="{{ r.html_url }}/stargazers">{{ r.stargazers_count }}<i class="fas fa-star fa-fw"></i></a>
                   <a href="{{ r.html_url }}/watchers">{{ r.watchers_count }}<i class="fas fa-eye fa-fw"></i></a>
-                  <a href="{{ r.html_url }}/network/members">{{ r.forks_count }}<i class="fas fa-utensils fa-fw"></i></a>
-                  {% comment %}
+                  <a href="{{ r.html_url }}/network/members">{{ r.forks_count }}<i class="fas fa-utensils fa-fw"></i></a>{{""
+                  }}{% comment %}
                     I know instead of a knife and a fork, there should be sth like
                     <i class="fas fa-code-branch"></i> but it looks like branch
                     icon so I don't want to have any misunderstandings.
@@ -136,41 +135,43 @@ window.innerHeight;
                   <a href="{{ r.html_url }}/issues">{{ r.open_issues_count }}<i class="fas fa-exclamation-circle fa-fw"></i></a>
                 </p>
               </div>
-              <div class="right">
-                {%if r.homepage and r.homepage != ''%}
+              <div class="right">{{""
+                }}{%if r.homepage and r.homepage != ''%}
                   <div class="badges">
                     <a href="{{r.homepage}}"><i class="fab fa-html5 fa-fw"></i></a>
-                  </div>
-                {%endif%}
+                  </div>{{""
+                }}{%endif%}
                 <div class="date">
                   {{ r.updated_at | date: "%Y-%m-%d" }}
                 </div>
               </div>
               <div style="clear: both;"></div>
-            </div>
-          {% endif %}
-          {% assign number = number | minus: 1 %}
-        {% endfor %}
+            </div>{{""
+          }}{% endif %}{{""
+          }}{% assign number = number | minus: 1 %}{{""
+        }}{% endfor %}
         <p>and <a href="{{ site.github.owner.html_url }}?tab=repositories">{{left}} repos more</a>!</p>
       </article>
     </main>
     <footer>
+      <div class="love">
+        &lt;/&gt; with &lt;3 by Nircek
+      </div>
       <div class="social">
-        <i class="fab fa-discord"></i>
-        <i class="fab fa-keybase"></i>
-        <i class="fab fa-facebook-square"></i>
-        <i class="fab fa-github-square"></i>
-        <i class="fas fa-envelope-square"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter-square"></i>
-        <i class="fab fa-stack-overflow"></i>
-        <i class="fab fa-telegram-plane"></i>
+        <a href="https://keybase.io/nircek"><i class="fab fa-keybase fa-fw"></i></a>
+        <a href="https://www.facebook.com/nircek2103"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://github.com/Nircek"><i class="fab fa-github-square fa-fw"></i></a>
+        <a href="mailto:m.zepp@outlook.com"><i class="fas fa-envelope-square fa-fw"></i></a>
+        <a href="https://www.instagram.com/nircus/"><i class="fab fa-instagram fa-fw"></i></a>
+        <a href="https://twitter.com/nircek2103"><i class="fab fa-twitter-square fa-fw"></i></a>
       </div>
       <div class="copyright">
         &copy; 2019 Nircek<br>
-        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-          <img alt="Creative Commons License" style="border-width:0" src="data:image/png;base64,
-{%comment%}`curl --insecure -L https://i.creativecommons.org/l/by/4.0/88x31.png | base64`{%endcomment%}
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">{%comment%}
+          `curl --insecure -L https://i.creativecommons.org/l/by/4.0/88x31.png | base64`
+{%endcomment%}
+          <img alt="Creative Commons License" style="border-width:0" src="{{
+"data:image/png;base64,
 iVBORw0KGgoAAAANSUhEUgAAAFgAAAAfCAYAAABjyArgAAAABGdBTUEAALGPC/xhBQAAAAFzUkdC
 AdnJLH8AAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAABTpJREFU
 aN7tWk1PG0cY9jlSLO5cOIYbbZUeU6T0B5AfkIh/UNRbJKqgiFSKVAlZrqLm0FCptyawxubDX3gN
@@ -196,17 +197,11 @@ z9+jT/YkEzw2kj14l6Qs1cT7sMmeiQAYdfnVspeufP7iuQ/kQZI+YH1ourJt0us3r7/F3eWLH0u/
 /sJuVGeIhDva0EdNuD/+8TFLA/xsfMBvdPvef+O3V8scDABklcnDbBkB3FanSe/ev4vqHEJokBHs
 M1aAPZBtd9MTmjzwpmdSNj2tyMANghd2PQZwwwEWuVC37QFar2177Fzwtj3OR7TNyGWhV7ryVkiE
 Wr//4TvS0hq7cPCTbe/giaMcPHH4nnrwJJXR6MlPT8ZxVOk2SUNvgKUCrLd/vKViuagcnepWHJ1q
-m9yGPuMAdmIZfF9HUInowT0QX+905f/GIzQzf2iprAAAAABJRU5ErkJggg==">
+m9yGPuMAdmIZfF9HUInowT0QX+905f/GIzQzf2iprAAAAABJRU5ErkJggg==" | strip_newlines}}">
         </a>
         <p>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</p>
       </div>
-      <div class="open">
-        &lt;3
-        <!-- made with <3 or something -->
-      </div>
-      <div style="clear: both; padding: 0; height: 0;"></div>
     </footer>
-    <div style="clear: both;"></div>
   </div>
   <div id="debug"></div>
 </body>
