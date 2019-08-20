@@ -271,17 +271,19 @@ html {
             color: #333;
           }
           p {
-            line-height: 200%;
+            line-height: 120%;
           }
         }
         .right {
           float: left;
           width: 20%;
           div.badges {
+            font-size: 1.6em;
             position: absolute;
             right: 1em;
           }
           .date {
+            text-align: right;
             position: absolute;
             right: 1em;
             bottom: 1em;
