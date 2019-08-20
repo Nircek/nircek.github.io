@@ -322,9 +322,20 @@ html {
     text-align: center;
     .love {
       font-size: var(--main-font-size);
-      padding: 1em;
+      padding-top: 1rem;
+    }
+    .generated {
+      padding-top: .5rem;
+      &:after {
+        color: $deploy-color;
+        -webkit-text-fill-color: $deploy-color;
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: .5px;
+        content: "#{$deploy-color}";
+      }
     }
     .social {
+      padding: 2rem;
       font-size: calc(var(--main-font-size) * 2.5);
       a {
         color: inherit;
@@ -335,7 +346,7 @@ html {
       }
     }
     .copyright {
-      padding: 1.5em;
+      padding-bottom: 1.5rem;
       a {
         color: #faa;
         text-decoration: none;
