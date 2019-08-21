@@ -114,17 +114,17 @@ html {
     width: var(--width);
     margin-left: auto;
     margin-right: auto;
-	header {
+  header {
 
-		#gliders {
+    #gliders {
       margin: 0;
       background: $surface url(../img/glider.svg) repeat-x fixed;
       background-size: calc(var(--glider-size));
       background-position: var(--glider-position);
       padding: var(--margin);
-			#circle {
+      #circle {
 
-				img {
+        img {
           width: var(--circle-radius);
           height: var(--circle-radius);
           display: block;
@@ -133,32 +133,32 @@ html {
           border-radius: 50%;
           border: black var(--circle-border-size) solid;
           position: relative;
-				}
-			}
-		}
+        }
+      }
+    }
 
-		article {
+    article {
       margin: 0;
       text-align: center;
       font-size: var(--info-size);
       margin-top: var(--info-covering);
       padding-top: calc(-1 * var(--info-covering));
       @include setup-color($primary);
-			h1 {
+      h1 {
         font-weight: 700;
         -webkit-text-fill-color: black;
         -webkit-text-stroke-color: white;
         -webkit-text-stroke-width: var(--stroke-width);
         letter-spacing: .05em;
-			}
+      }
 
-			h2 {
+      h2 {
         font-size: 0.5em;
         font-weight: 300;
         letter-spacing: .1em;
-			}
+      }
 
-			section {
+      section {
         margin-top: 1rem;
         padding: 1vw;
         width: calc(100% - 2vw);
@@ -166,7 +166,7 @@ html {
         h6 {
           display: none;
         }
-				p {
+        p {
           font-size: var(--desc-size);
           display: block;
           margin: 0 auto 0 auto;
@@ -174,12 +174,12 @@ html {
           line-height: 1.3;
           text-align: center;
           width: 32ch;
-				}
-			}
-		}
-	}
+        }
+      }
+    }
+  }
 
-	main {
+  main {
     font-family: "Source Code Pro", monospace;
     font-size: var(--main-font-size);
     @include setup-color($surface);
@@ -195,9 +195,9 @@ html {
         @include setup-color($surface, darken($accent, 14%));
       }
     }
-		article {
+    article {
 
-			header {
+      header {
 
         h1 {
           /* modified https://codepen.io/JJimmyFlynn/pen/bkGIL code by John Flynn (@JJimmyFlynn) */
@@ -248,7 +248,7 @@ html {
             }
           }
         }
-			}
+      }
       div.repo {
         margin: 1em var(--margin);
         padding: 1em;
@@ -309,13 +309,13 @@ html {
         @include setup-color($surface, $primary);
         font-style: italic;
       }
-			.tab {
+      .tab {
           margin-left: 4ch;
-			}
-		}
-	}
+      }
+    }
+  }
 
-	footer {
+  footer {
     font-size: 1em;
     background-color: #111;
     color: #eee;
@@ -355,7 +355,7 @@ html {
         }
       }
     }
-	}
+  }
 }
 
 #debug {
