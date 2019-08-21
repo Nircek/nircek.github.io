@@ -200,7 +200,7 @@ html {
       header {
 
         h1 {
-          /* modified https://codepen.io/JJimmyFlynn/pen/bkGIL code by John Flynn (@JJimmyFlynn) */
+          // modified https://codepen.io/JJimmyFlynn/pen/bkGIL code by John Flynn (@JJimmyFlynn)
           position: relative;
           margin: 1em calc(-.5em - var(--ribbon-extra-length));
           padding: calc(var(--ribbon-width) - var(--main-font-size));
@@ -369,7 +369,7 @@ html {
   }
   @include setup-color(white);
   @include monitor {@include setup-color(lightgreen);} @include tablet {@include setup-color(yellow);} @include phone {@include setup-color(red);} @include phone(portrait) {@include setup-color(orange);}
-  display: /**/block/*/ none /*/;
+  display: /*/block/*/ none /*/;
   /*
     To switch display you should only remove or add first asterisk
   */
